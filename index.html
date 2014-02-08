@@ -1,28 +1,23 @@
 <!DOCTYPE HTML>
-<html>
 <head>
-<meta name="viewport" content="width=320; user-scalable=no" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<title>Hello World: PhoneGap Orientation</title>
-  <script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>
-  <script type="text/javascript" charset="utf-8" src="jquery-1.11.0.min.js"></script>
+	<meta charset=utf-8">
+	<title>Hello World: PhoneGap Orientation</title>
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.1.0.js"></script>
+	<script type="text/javascript" charset="utf-8" src="jquery-1.11.0.min.js"></script>
 </head>
-<body onload="init();" >
-  <h2>Orientation Test</h2>
-  <div id="status"></div>
-  <script>
-    function init() 
-    {
-		  window.addEventListener("orientationchange", orientationChange, true);
-		}
-
-		function orientationChange(e) 
-		{
-		  var orientation="portrait";
-		  if(window.orientation == -90 || window.orientation == 90) orientation = "landscape";
-		  $("#status").append(orientation + "<br />");
-		}
-
-  </script>
+<body>
+	<h2>Orientation Test</h2>
+	<div id="status"></div>
+	<script>
+	  $(document).ready(function()
+	  {
+			window.addEventListener("orientationchange", orientationChange, true);
+			function orientationChange(e) 
+			{
+				var orientation="portrait";
+				if(window.orientation == -90 || window.orientation == 90) orientation = "landscape";
+				$("#status").append(orientation + "<br />");
+			}
+		});
+	</script>
 </body>
-</html>
